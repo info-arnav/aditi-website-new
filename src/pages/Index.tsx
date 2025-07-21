@@ -14,105 +14,174 @@ import {
   TrendingUp,
   FileText,
   Download,
+  Menu,
+  X,
 } from "lucide-react";
+import { useState } from "react";
 
 const Index = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-subtle">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-xl font-bold text-foreground">Aditi Gupta</h1>
-            <div className="hidden md:flex space-x-6">
+            <h1 className="text-lg sm:text-xl font-bold text-foreground">Aditi Gupta</h1>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-4 lg:space-x-6">
               <a
                 href="#about"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm lg:text-base"
               >
                 About
               </a>
               <a
                 href="#experience"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm lg:text-base"
               >
                 Experience
               </a>
               <a
                 href="#projects"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm lg:text-base"
               >
                 Projects
               </a>
               <a
                 href="#extracurricular"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm lg:text-base"
               >
                 Leadership
               </a>
               <a
                 href="#creator"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm lg:text-base"
               >
                 Creator
-              </a>{" "}
+              </a>
               <a
                 href="#resume"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm lg:text-base"
               >
                 Resume
               </a>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6 text-foreground" />
+              ) : (
+                <Menu className="w-6 h-6 text-foreground" />
+              )}
+            </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t pt-4">
+              <div className="flex flex-col space-y-3">
+                <a
+                  href="#about"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  About
+                </a>
+                <a
+                  href="#experience"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Experience
+                </a>
+                <a
+                  href="#projects"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Projects
+                </a>
+                <a
+                  href="#extracurricular"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Leadership
+                </a>
+                <a
+                  href="#creator"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Creator
+                </a>
+                <a
+                  href="#resume"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Resume
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
-              <div className="relative">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="lg:w-1/2 order-2 lg:order-1">
+              <div className="relative mx-auto lg:mx-0 w-fit">
                 <img
                   src="/static/polaroid.png"
                   alt="Aditi Gupta"
-                  className="w-80 h-100 object-cover rounded-2xl shadow-soft"
+                  className="w-64 sm:w-80 h-80 sm:h-100 object-cover rounded-2xl shadow-soft"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-gradient-primary p-4 rounded-xl shadow-hover">
-                  <TrendingUp className="w-8 h-8 text-primary-foreground" />
+                <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-gradient-primary p-3 sm:p-4 rounded-xl shadow-hover">
+                  <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2 text-center lg:text-left">
-              <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <div className="lg:w-1/2 text-center lg:text-left order-1 lg:order-2">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">
                 Hi, I'm{" "}
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Aditi
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                 B.Tech student at NSUT Delhi with a creative lens — I see shapes
                 in numbers and stories in data. Director of Nalum, VP at
                 Enactus, and digital content creator passionate about driving
                 meaningful change.
               </p>
-              <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
-                <Badge variant="secondary" className="px-4 py-2">
+              <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 justify-center lg:justify-start">
+                <Badge variant="secondary" className="px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">
                   Data Analyst
                 </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
+                <Badge variant="secondary" className="px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">
                   Product Strategy
                 </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
+                <Badge variant="secondary" className="px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">
                   Content Creator
                 </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
+                <Badge variant="secondary" className="px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">
                   Social Impact
                 </Badge>
               </div>
-              <div className="flex gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <Button
                   variant="default"
-                  className="shadow-soft"
+                  className="shadow-soft w-full sm:w-auto"
                   onClick={() =>
                     window.open("mailto:aditi.gupta1109@gmail.com", "_blank")
                   }
@@ -120,32 +189,34 @@ const Index = () => {
                   <Mail className="w-4 h-4 mr-2" />
                   Get In Touch
                 </Button>
-                <Button
-                  variant="outline"
-                  className="shadow-soft"
-                  onClick={() =>
-                    window.open(
-                      "https://in.linkedin.com/in/aditi-gupta-379ab624a",
-                      "_blank"
-                    )
-                  }
-                >
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </Button>
-                <Button
-                  variant="outline"
-                  className="shadow-soft"
-                  onClick={() =>
-                    window.open(
-                      "https://www.instagram.com/aditi.c0re/",
-                      "_blank"
-                    )
-                  }
-                >
-                  <Instagram className="w-4 h-4 mr-2" />
-                  Instagram
-                </Button>
+                <div className="flex gap-3 sm:gap-4">
+                  <Button
+                    variant="outline"
+                    className="shadow-soft flex-1 sm:flex-none"
+                    onClick={() =>
+                      window.open(
+                        "https://in.linkedin.com/in/aditi-gupta-379ab624a",
+                        "_blank"
+                      )
+                    }
+                  >
+                    <Linkedin className="w-4 h-4 mr-2" />
+                    LinkedIn
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="shadow-soft flex-1 sm:flex-none"
+                    onClick={() =>
+                      window.open(
+                        "https://www.instagram.com/aditi.c0re/",
+                        "_blank"
+                      )
+                    }
+                  >
+                    <Instagram className="w-4 h-4 mr-2" />
+                    Instagram
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -153,12 +224,12 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6 bg-card">
+      <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-card">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-foreground">
             About Me
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             <Card className="shadow-soft hover:shadow-hover transition-shadow">
               <CardContent className="p-8">
                 <GraduationCap className="w-12 h-12 text-primary mb-4" />
@@ -189,12 +260,12 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-6">
+      <section id="experience" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-foreground">
             Work Experience
           </h2>
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <Card className="shadow-soft hover:shadow-hover transition-shadow">
               <CardContent className="p-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
@@ -340,28 +411,48 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 bg-card">
+      <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-card">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-foreground">
             Featured Projects
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             <Card className="shadow-soft hover:shadow-hover transition-shadow">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-4 text-foreground">
+              <CardContent className="p-4 sm:p-6 lg:p-8">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">
                   FairPlay in Online Money Games
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
                   Research project analyzing fairness in real-money gaming
                   platforms with 300+ participants. Co-authored published
                   research with Prof. Ritu Sibal and Mr. Sanjaya Baru.
                 </p>
-                <div className="mb-6">
-                  <img
-                    src="/assets/Reso/WhatsApp Image 2025-07-16 at 21.03.57_159e5dd1.jpg"
-                    alt="Research presentation"
-                    className="w-full h-48 object-cover rounded-lg shadow-soft"
-                  />
+                <div className="bg-gradient-primary p-4 sm:p-6 rounded-lg mb-4 sm:mb-6 text-center">
+                  <div className="flex flex-col sm:flex-row items-center justify-center mb-2 sm:mb-3">
+                    <FileText className="w-10 h-10 sm:w-12 sm:h-12 text-primary-foreground mb-2 sm:mb-0 sm:mr-3" />
+                    <div>
+                      <div className="text-lg sm:text-xl font-bold text-primary-foreground">
+                        Published Research
+                      </div>
+                      <div className="text-primary-foreground text-xs sm:text-sm">
+                        Gaming Ethics & Fairness Analysis
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <div className="bg-muted p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-primary">300+</div>
+                    <div className="text-sm text-muted-foreground">
+                      Participants
+                    </div>
+                  </div>
+                  <div className="bg-muted p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-primary">3</div>
+                    <div className="text-sm text-muted-foreground">
+                      Co-Authors
+                    </div>
+                  </div>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="outline">Research</Badge>
@@ -515,12 +606,12 @@ const Index = () => {
       </section>
 
       {/* Leadership & Extracurricular Section */}
-      <section id="extracurricular" className="py-20 px-6">
+      <section id="extracurricular" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-foreground">
             Leadership & Extracurricular
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <Card className="shadow-soft hover:shadow-hover transition-shadow">
               <CardContent className="p-8 text-center">
                 <Users className="w-16 h-16 text-primary mx-auto mb-4" />
@@ -575,9 +666,9 @@ const Index = () => {
       </section>
 
       {/* Creator Section */}
-      <section id="creator" className="py-20 px-6 bg-card">
+      <section id="creator" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-card">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-foreground">
             Digital Creator
           </h2>
           <Card className="shadow-soft hover:shadow-hover transition-shadow">
@@ -625,10 +716,63 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Resume Section */}
-      <section id="resume" className="py-20 px-6">
+      {/* Dance Performance Section */}
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-foreground">
+            Performance & Arts
+          </h2>
+          <Card className="shadow-soft hover:shadow-hover transition-shadow">
+            <CardContent className="p-8">
+              <div className="flex items-center mb-6">
+                <Award className="w-8 h-8 text-primary mr-3" />
+                <h3 className="text-2xl font-bold text-foreground">
+                  Performer | Mirage Dance Crew | Resonanz'24
+                </h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Dance has always been my creative outlet. In my first year at NSUT, I cleared all 3 rounds of auditions to join Mirage, the university's premier dance crew. However, a lower back injury just before the performing season forced me to step back and rest for two months — and ultimately step away from the crew.
+                  </p>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    But the stage found me again. In my third year, I performed in Resonanz, the university's intra-college fest, where I competed in the Battle of Branches competition — and won first place.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    The experience reminded me that while setbacks may pause passion, they don't have to end it.
+                  </p>
+                </div>
+                <div>
+                  <img
+                    src="/assets/Reso/WhatsApp Image 2025-07-16 at 21.03.57_159e5dd1.jpg"
+                    alt="Resonanz'24 dance performance"
+                    className="w-full h-64 object-cover rounded-lg shadow-soft"
+                  />
+                  <div className="mt-4 bg-gradient-primary p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-primary-foreground mb-1">
+                      1st Place
+                    </div>
+                    <div className="text-primary-foreground text-sm">
+                      Battle of Branches - Resonanz'24
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="outline">Dance</Badge>
+                <Badge variant="outline">Performance</Badge>
+                <Badge variant="outline">Mirage Crew</Badge>
+                <Badge variant="outline">Resilience</Badge>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Resume Section */}
+      <section id="resume" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-foreground">
             Resume
           </h2>
           <Card className="shadow-soft hover:shadow-hover transition-shadow">
@@ -683,16 +827,16 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-muted">
+      <footer className="py-8 sm:py-12 px-4 sm:px-6 bg-muted">
         <div className="container mx-auto max-w-4xl text-center">
-          <h3 className="text-2xl font-bold mb-4 text-foreground">
+          <h3 className="text-xl sm:text-2xl font-bold mb-4 text-foreground">
             Let's Connect
           </h3>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-6 sm:mb-8 text-sm sm:text-base">
             Always open to discussing data, collaborations, or creative
             projects.
           </p>
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Button
               variant="outline"
               className="shadow-soft"
