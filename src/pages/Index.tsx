@@ -12,6 +12,8 @@ import {
   Users,
   Lightbulb,
   TrendingUp,
+  FileText,
+  Download,
 } from "lucide-react";
 
 const Index = () => {
@@ -52,6 +54,12 @@ const Index = () => {
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 Creator
+              </a>{" "}
+              <a
+                href="#resume"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                Resume
               </a>
             </div>
           </div>
@@ -102,13 +110,41 @@ const Index = () => {
                 </Badge>
               </div>
               <div className="flex gap-4 justify-center lg:justify-start">
-                <Button variant="default" className="shadow-soft">
+                <Button
+                  variant="default"
+                  className="shadow-soft"
+                  onClick={() =>
+                    window.open("mailto:aditi.gupta1109@gmail.com", "_blank")
+                  }
+                >
                   <Mail className="w-4 h-4 mr-2" />
                   Get In Touch
                 </Button>
-                <Button variant="outline" className="shadow-soft">
+                <Button
+                  variant="outline"
+                  className="shadow-soft"
+                  onClick={() =>
+                    window.open(
+                      "https://in.linkedin.com/in/aditi-gupta-379ab624a",
+                      "_blank"
+                    )
+                  }
+                >
                   <Linkedin className="w-4 h-4 mr-2" />
                   LinkedIn
+                </Button>
+                <Button
+                  variant="outline"
+                  className="shadow-soft"
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/aditi.c0re/",
+                      "_blank"
+                    )
+                  }
+                >
+                  <Instagram className="w-4 h-4 mr-2" />
+                  Instagram
                 </Button>
               </div>
             </div>
@@ -175,29 +211,57 @@ const Index = () => {
                     Gurugram, India
                   </div>
                 </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Transformed overwhelming 1.7M row datasets into actionable
-                  insights. Built forecasting models using PyTorch and created
-                  Tableau dashboards that improved decision-making across teams.
-                </p>
-                <div className="grid md:grid-cols-3 gap-4 mb-6">
-                  <div className="bg-muted p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-primary">98.8%</div>
-                    <div className="text-sm text-muted-foreground">
-                      Model Accuracy
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      Transformed overwhelming 1.7M row datasets into actionable
+                      insights. Built forecasting models using PyTorch and
+                      created Tableau dashboards that improved decision-making
+                      across teams.
+                    </p>
+                    <div className="grid md:grid-cols-3 gap-4 mb-6">
+                      <div className="bg-muted p-4 rounded-lg text-center">
+                        <div className="text-2xl font-bold text-primary">
+                          98.8%
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          Model Accuracy
+                        </div>
+                      </div>
+                      <div className="bg-muted p-4 rounded-lg text-center">
+                        <div className="text-2xl font-bold text-primary">
+                          71%
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          Time Reduction
+                        </div>
+                      </div>
+                      <div className="bg-muted p-4 rounded-lg text-center">
+                        <div className="text-2xl font-bold text-primary">
+                          140K
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          Optimized Rows
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="bg-muted p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-primary">71%</div>
-                    <div className="text-sm text-muted-foreground">
-                      Time Reduction
-                    </div>
-                  </div>
-                  <div className="bg-muted p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-primary">140K</div>
-                    <div className="text-sm text-muted-foreground">
-                      Optimized Rows
-                    </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <img
+                      src="/assets/Zopper/Board.jpg"
+                      alt="Zopper workspace"
+                      className="w-full h-32 object-cover rounded-lg shadow-soft"
+                    />
+                    <img
+                      src="/assets/Zopper/Self.jpg"
+                      alt="At Zopper office"
+                      className="w-full h-32 object-cover rounded-lg shadow-soft"
+                    />
+                    <img
+                      src="/assets/Zopper/Ambience.jpg"
+                      alt="Zopper office ambience"
+                      className="w-full h-32 object-cover rounded-lg shadow-soft col-span-2"
+                    />
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -232,7 +296,18 @@ const Index = () => {
                   surveillance system integrating video analysis with
                   transaction data.
                 </p>
-                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                <div className="bg-gradient-primary p-4 rounded-lg mb-6 text-center">
+                  <div className="flex items-center justify-center mb-3">
+                    <Award className="w-8 h-8 text-primary-foreground mr-2" />
+                    <span className="text-primary-foreground font-semibold">
+                      Fraud Detection System
+                    </span>
+                  </div>
+                  <div className="text-primary-foreground text-sm">
+                    Real-time surveillance integration with video analysis
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-3 gap-4 mb-6">
                   <div className="bg-muted p-4 rounded-lg text-center">
                     <div className="text-2xl font-bold text-primary">80%</div>
                     <div className="text-sm text-muted-foreground">
@@ -243,6 +318,12 @@ const Index = () => {
                     <div className="text-2xl font-bold text-primary">150+</div>
                     <div className="text-sm text-muted-foreground">
                       Outlets Analyzed
+                    </div>
+                  </div>
+                  <div className="bg-muted p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-primary">75K+</div>
+                    <div className="text-sm text-muted-foreground">
+                      Data Rows Processed
                     </div>
                   </div>
                 </div>
@@ -275,6 +356,13 @@ const Index = () => {
                   platforms with 300+ participants. Co-authored published
                   research with Prof. Ritu Sibal and Mr. Sanjaya Baru.
                 </p>
+                <div className="mb-6">
+                  <img
+                    src="/assets/Reso/WhatsApp Image 2025-07-16 at 21.03.57_159e5dd1.jpg"
+                    alt="Research presentation"
+                    className="w-full h-48 object-cover rounded-lg shadow-soft"
+                  />
+                </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="outline">Research</Badge>
                   <Badge variant="outline">Data Analysis</Badge>
@@ -296,6 +384,26 @@ const Index = () => {
                   using Excel and Power BI. Created dynamic dashboards for
                   revenue optimization and customer behavior insights.
                 </p>
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <div className="bg-muted p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-primary">50K+</div>
+                    <div className="text-sm text-muted-foreground">
+                      Orders Analyzed
+                    </div>
+                  </div>
+                  <div className="bg-muted p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-primary">15+</div>
+                    <div className="text-sm text-muted-foreground">
+                      KPI Dashboards
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-gradient-primary p-6 rounded-lg mb-6 text-center">
+                  <TrendingUp className="w-16 h-16 text-primary-foreground mx-auto mb-3" />
+                  <div className="text-primary-foreground text-sm font-medium">
+                    Interactive Business Intelligence Dashboard
+                  </div>
+                </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="outline">Power BI</Badge>
                   <Badge variant="outline">Excel</Badge>
@@ -317,6 +425,38 @@ const Index = () => {
                   SolidWorks design. Won Enactus India National Expo and secured
                   ₹2L funding.
                 </p>
+                <div className="grid grid-cols-3 gap-2 mb-6">
+                  <img
+                    src="/assets/Clair/IMG-20250716-WA0011.jpg"
+                    alt="Project Clair development"
+                    className="w-full h-24 object-cover rounded-lg shadow-soft"
+                  />
+                  <img
+                    src="/assets/Clair/IMG-20250716-WA0012.jpg"
+                    alt="Clair product design"
+                    className="w-full h-24 object-cover rounded-lg shadow-soft"
+                  />
+                  <img
+                    src="/assets/Clair/IMG-20250716-WA0013.jpg"
+                    alt="Team working on Clair"
+                    className="w-full h-24 object-cover rounded-lg shadow-soft"
+                  />
+                  <img
+                    src="/assets/Clair/IMG-20250716-WA0014.jpg"
+                    alt="Clair prototype"
+                    className="w-full h-24 object-cover rounded-lg shadow-soft"
+                  />
+                  <img
+                    src="/assets/Clair/IMG-20250716-WA0015.jpg"
+                    alt="Clair testing phase"
+                    className="w-full h-24 object-cover rounded-lg shadow-soft"
+                  />
+                  <img
+                    src="/assets/Clair/IMG-20250716-WA0016.jpg"
+                    alt="Clair final presentation"
+                    className="w-full h-24 object-cover rounded-lg shadow-soft"
+                  />
+                </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="outline">SolidWorks</Badge>
                   <Badge variant="outline">Product Design</Badge>
@@ -338,6 +478,28 @@ const Index = () => {
                   paper. Leading R&D phase with plans for community employment
                   and social inclusion.
                 </p>
+                <div className="grid grid-cols-2 gap-2 mb-6">
+                  <img
+                    src="/assets/Srijan/IMG-20250716-WA0017.jpg"
+                    alt="Srijan paper recycling process"
+                    className="w-full h-32 object-cover rounded-lg shadow-soft"
+                  />
+                  <img
+                    src="/assets/Srijan/IMG-20250716-WA0018.jpg"
+                    alt="Seed paper creation"
+                    className="w-full h-32 object-cover rounded-lg shadow-soft"
+                  />
+                  <img
+                    src="/assets/Srijan/IMG-20250716-WA0019.jpg"
+                    alt="Team working on Srijan"
+                    className="w-full h-32 object-cover rounded-lg shadow-soft"
+                  />
+                  <img
+                    src="/assets/Srijan/WhatsApp Image 2025-07-16 at 18.26.26_8df164ac.jpg"
+                    alt="Srijan sustainability workshop"
+                    className="w-full h-32 object-cover rounded-lg shadow-soft"
+                  />
+                </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="outline">Sustainability</Badge>
                   <Badge variant="outline">Social Impact</Badge>
@@ -463,6 +625,63 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Resume Section */}
+      <section id="resume" className="py-20 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
+            Resume
+          </h2>
+          <Card className="shadow-soft hover:shadow-hover transition-shadow">
+            <CardContent className="p-8">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="md:w-1/3 text-center">
+                  <div className="bg-gradient-primary p-6 rounded-xl mb-4 inline-block">
+                    <FileText className="w-16 h-16 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    Download Resume
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    View my complete professional profile
+                  </p>
+                </div>
+                <div className="md:w-2/3">
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Get a comprehensive overview of my experience, skills, and
+                    achievements. My resume includes detailed information about
+                    my work experience, projects, leadership roles, and
+                    technical expertise in data analysis and product strategy.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button
+                      variant="default"
+                      className="shadow-soft"
+                      onClick={() => window.open("/docs/resume.pdf", "_blank")}
+                    >
+                      <FileText className="w-4 h-4 mr-2" />
+                      View Resume
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="shadow-soft"
+                      onClick={() => {
+                        const link = document.createElement("a");
+                        link.href = "/docs/resume.pdf";
+                        link.download = "Aditi_Gupta_Resume.pdf";
+                        link.click();
+                      }}
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Download PDF
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 px-6 bg-muted">
         <div className="container mx-auto max-w-4xl text-center">
@@ -474,15 +693,36 @@ const Index = () => {
             projects.
           </p>
           <div className="flex justify-center gap-4">
-            <Button variant="outline" className="shadow-soft">
+            <Button
+              variant="outline"
+              className="shadow-soft"
+              onClick={() =>
+                window.open("mailto:aditi.gupta1109@gmail.com", "_blank")
+              }
+            >
               <Mail className="w-4 h-4 mr-2" />
               Email
             </Button>
-            <Button variant="outline" className="shadow-soft">
+            <Button
+              variant="outline"
+              className="shadow-soft"
+              onClick={() =>
+                window.open(
+                  "https://in.linkedin.com/in/aditi-gupta-379ab624a",
+                  "_blank"
+                )
+              }
+            >
               <Linkedin className="w-4 h-4 mr-2" />
               LinkedIn
             </Button>
-            <Button variant="outline" className="shadow-soft">
+            <Button
+              variant="outline"
+              className="shadow-soft"
+              onClick={() =>
+                window.open("https://www.instagram.com/aditi.c0re/", "_blank")
+              }
+            >
               <Instagram className="w-4 h-4 mr-2" />
               Instagram
             </Button>
