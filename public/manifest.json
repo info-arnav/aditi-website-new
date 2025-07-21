@@ -1,0 +1,20 @@
+{
+  "name": "Aditi Gupta",
+  "short_name": "Aditi Gupta",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Mechanical Engineer at NSUT, 7th semester. Applying for Data Analyst, Consultancy, and Business Development roles.",
+  "icons": [
+    {
+      "src": "/static/logo-safe-region.svg",
+      "sizes": "200x500",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/static/logo-safe-region-square.svg",
+      "sizes": "500x500",
+      "type": "image/svg+xml"
+    }
+  ]
+}
