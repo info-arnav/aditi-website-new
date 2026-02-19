@@ -1,21 +1,11 @@
 import { Helmet } from 'react-helmet';
 import { Link, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 import { ArrowLeft, Compass } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 
 const NotFound = () => {
   const location = useLocation();
-
-  useEffect(() => {
-    if (import.meta.env.DEV) {
-      console.warn(
-        '404: User attempted to access non-existent route:',
-        location.pathname,
-      );
-    }
-  }, [location.pathname]);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-subtle">
