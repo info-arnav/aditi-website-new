@@ -35,7 +35,14 @@ const Navigation = ({
             ))}
           </div>
 
-          <button className="p-2 md:hidden" onClick={onToggleMobileMenu}>
+          <button
+            type="button"
+            className="p-2 md:hidden"
+            onClick={onToggleMobileMenu}
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation-menu"
+          >
             {mobileMenuOpen ? (
               <X className="h-6 w-6 text-foreground" />
             ) : (
@@ -45,7 +52,10 @@ const Navigation = ({
         </div>
 
         {mobileMenuOpen && (
-          <div className="absolute left-0 right-0 top-full z-40 border-b bg-background backdrop-blur-md md:hidden">
+          <div
+            id="mobile-navigation-menu"
+            className="absolute left-0 right-0 top-full z-40 border-b bg-background backdrop-blur-md md:hidden"
+          >
             <div className="container mx-auto px-4 py-4 sm:px-6">
               <div className="flex flex-col space-y-3">
                 {navItems.map((item) => (

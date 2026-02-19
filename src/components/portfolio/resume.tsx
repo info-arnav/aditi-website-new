@@ -7,6 +7,10 @@ import { getPortfolioContent } from '@/features/portfolio/services/portfolio-con
 const ResumeSection = () => {
   const { resume } = getPortfolioContent();
 
+  const openResume = () => {
+    window.open(resume.filePath, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="resume" className="px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
       <div className="container mx-auto max-w-4xl">
@@ -35,7 +39,7 @@ const ResumeSection = () => {
                   <Button
                     variant="default"
                     className="shadow-soft"
-                    onClick={() => window.open(resume.filePath, '_blank')}
+                    onClick={openResume}
                   >
                     <FileText className="mr-2 h-4 w-4" />
                     View Resume
