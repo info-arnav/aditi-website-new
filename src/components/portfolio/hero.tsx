@@ -12,6 +12,10 @@ const socialIconByLabel = {
 const HeroSection = () => {
   const { hero } = getPortfolioContent();
 
+  const openExternal = (href: string) => {
+    window.open(href, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section className="px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
       <div className="container mx-auto max-w-6xl">
@@ -56,7 +60,7 @@ const HeroSection = () => {
               <Button
                 variant="default"
                 className="w-full shadow-soft sm:w-auto"
-                onClick={() => window.open(`mailto:${hero.cta.email}`, '_blank')}
+                onClick={() => openExternal(`mailto:${hero.cta.email}`)}
               >
                 <Mail className="mr-2 h-4 w-4" />
                 Get In Touch
@@ -74,7 +78,7 @@ const HeroSection = () => {
                       key={social.label}
                       variant="outline"
                       className="flex-1 shadow-soft sm:flex-none"
-                      onClick={() => window.open(social.href, '_blank')}
+                      onClick={() => openExternal(social.href)}
                     >
                       <Icon className="mr-2 h-4 w-4" />
                       {social.label}
