@@ -1,13 +1,6 @@
 import { Menu, X } from 'lucide-react';
 
-const navItems = [
-  { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#extracurricular', label: 'Leadership' },
-  { href: '#creator', label: 'Creator' },
-  { href: '#resume', label: 'Resume' },
-];
+import { getPortfolioContent } from '@/features/portfolio/services/portfolio-content.service';
 
 type NavigationProps = {
   mobileMenuOpen: boolean;
@@ -20,6 +13,8 @@ const Navigation = ({
   onToggleMobileMenu,
   onCloseMobileMenu,
 }: NavigationProps) => {
+  const { navItems } = getPortfolioContent();
+
   return (
     <nav className="sticky top-0 z-50 border-b bg-background backdrop-blur-md">
       <div className="container mx-auto px-4 py-4 sm:px-6">

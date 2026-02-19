@@ -1,5 +1,6 @@
-import { Instagram } from 'lucide-react';
+import { ExternalLink, Instagram } from 'lucide-react';
 
+import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 const CreatorSection = () => {
@@ -14,33 +15,32 @@ const CreatorSection = () => {
         </h2>
 
         <Card className="shadow-soft transition-shadow hover:shadow-hover">
-          <CardContent className="p-8">
-            <div className="mb-6 flex items-center">
+          <CardContent className="space-y-8 p-8">
+            <div className="flex items-center justify-center">
               <Instagram className="mr-3 h-8 w-8 text-primary" />
-              <h3 className="text-2xl font-bold text-foreground">
-                @aditi.c0re
-              </h3>
+              <h3 className="text-2xl font-bold text-foreground">@aditi.c0re</h3>
             </div>
 
-            <p className="mb-8 leading-relaxed text-muted-foreground">
-              What started as documenting college life turned into a content
-              creation journey around fashion, travel, and lifestyle with 50+
-              brand collaborations and authentic audience engagement.
+            <p className="text-center leading-relaxed text-muted-foreground">
+              Follow my journey around fashion, travel, and lifestyle, and reach
+              out for brand collaborations.
             </p>
 
-            <div className="mb-8 grid gap-6 md:grid-cols-3">
-              <div className="text-center">
-                <div className="mb-2 text-3xl font-bold text-primary">3M+</div>
-                <div className="text-muted-foreground">Monthly Reach</div>
-              </div>
-              <div className="text-center">
-                <div className="mb-2 text-3xl font-bold text-primary">30K</div>
-                <div className="text-muted-foreground">Avg. Views/Reel</div>
-              </div>
-              <div className="text-center">
-                <div className="mb-2 text-3xl font-bold text-primary">7%</div>
-                <div className="text-muted-foreground">Engagement Rate</div>
-              </div>
+            <div className="mx-auto max-w-md rounded-lg bg-muted p-6 text-center">
+              <p className="mb-4 text-sm text-muted-foreground">
+                Creator profile and latest posts are available directly on
+                Instagram.
+              </p>
+              <Button asChild className="shadow-soft">
+                <a
+                  href="https://www.instagram.com/aditi.c0re/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open Instagram
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
             </div>
 
             <div className="rounded-lg bg-muted p-6">
