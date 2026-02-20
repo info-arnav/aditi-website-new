@@ -8,6 +8,20 @@
   "description": "Mechanical Engineer at NSUT, 7th semester. Applying for Data Analyst, Consultancy, and Business Development roles.",
   "icons": [
     {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.png",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
       "src": "/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
